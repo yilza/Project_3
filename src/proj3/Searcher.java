@@ -5,7 +5,7 @@
 //Project Number: 3
 // AUTHOR: Christopher Barcelon, clbarcel, clbarcel@asu.edu
 //**************************************************************************************************
-package P03;
+package proj3;
 
 import java.util.ArrayList;
 

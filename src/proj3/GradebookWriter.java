@@ -5,7 +5,7 @@
 //Project Number: 3
 // AUTHOR: Christopher Barcelon, clbarcel, clbarcel@asu.edu
 //**************************************************************************************************
-package P03;
+package proj3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,7 +42,7 @@ public class GradebookWriter extends PrintWriter {
      *     Call close()
      * end writeGradebook
      */
-    public void writeGradebook(P03.Roster pRoster) throws FileNotFoundException {
+    public void writeGradebook(proj3.Roster pRoster) throws FileNotFoundException {
         File file = new File("gradebook.dat");
         PrintWriter out = new PrintWriter(file);
         for(Student student : pRoster.getStudentList()) {

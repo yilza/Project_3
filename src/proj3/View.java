@@ -1,4 +1,4 @@
-package P03;
+package proj3;
 //**************************************************************************************************
 // CLASS: P03.View (View.java)
 //
@@ -96,8 +96,8 @@ public class View extends JFrame implements ActionListener {
         panelHomework.setLayout(new FlowLayout());
         label = new JLabel("Homework");
         panelHomework.add(label);
-        mHomeworkText = new JTextField[P03.Main.getNumHomeworks()];
-        for(int i=0; i<P03.Main.getNumHomeworks();i++) {
+        mHomeworkText = new JTextField[proj3.Main.getNumHomeworks()];
+        for(int i = 0; i< proj3.Main.getNumHomeworks(); i++) {
             mHomeworkText[i] = new JTextField(5);
             panelHomework.add(mHomeworkText[i]);
         }
@@ -108,8 +108,8 @@ public class View extends JFrame implements ActionListener {
         JPanel panelExam = new JPanel();
         label = new JLabel("Exam");
         panelExam.add(label);
-        mExamText = new JTextField[P03.Main.getNumExams()];
-        for(int i=0; i<P03.Main.getNumExams(); i++) {
+        mExamText = new JTextField[proj3.Main.getNumExams()];
+        for(int i = 0; i< proj3.Main.getNumExams(); i++) {
             mExamText[i] = new JTextField(5);
             panelExam.add(mExamText[i]);
         }
@@ -223,7 +223,7 @@ public class View extends JFrame implements ActionListener {
                 messageBox("Please enter the students last name.");
             }
             else {
-                P03.Student.setCurrStudent(getMain().search(lastName));
+                proj3.Student.setCurrStudent(getMain().search(lastName));
                 if(Student.getCurrStudent() == null) {
                     messageBox("P03.Student not found. Try again.");
                 }
@@ -233,16 +233,16 @@ public class View extends JFrame implements ActionListener {
             }
         }
         else if(pEvent.getActionCommand().equals("Save")) {
-            if(P03.Student.getCurrStudent() != null) {
-                saveStudent(P03.Student.getCurrStudent());
+            if(proj3.Student.getCurrStudent() != null) {
+                saveStudent(proj3.Student.getCurrStudent());
             }
         }
         else if(pEvent.getActionCommand().equals("Clear")) {
             clear();
         }
         else if(pEvent.getActionCommand().equals("Exit")) {
-            if(P03.Student.getCurrStudent() != null) {
-                saveStudent(P03.Student.getCurrStudent());
+            if(proj3.Student.getCurrStudent() != null) {
+                saveStudent(proj3.Student.getCurrStudent());
             }
             getMain().exit();
         }
@@ -267,7 +267,7 @@ public class View extends JFrame implements ActionListener {
     private void clear(){
         mStudentName.setText("");
         clearNumbers();
-        P03.Student.setCurrStudent(null);
+        proj3.Student.setCurrStudent(null);
     }
 
     /**
@@ -310,12 +310,12 @@ public class View extends JFrame implements ActionListener {
      */
     private void displayStudent(Student pStudent) {
         mStudentName.setText(pStudent.getLastName() +", " + pStudent.getFirstName());
-        for(int i=0; i<P03.Main.getNumHomeworks(); i++) {
+        for(int i = 0; i< proj3.Main.getNumHomeworks(); i++) {
             int hw = pStudent.getHomework(i);
             String hwstr = Integer.toString(hw);
             mHomeworkText[i].setText(hwstr);
         }
-        for(int i=0; i<P03.Main.getNumExams(); i++) {
+        for(int i = 0; i< proj3.Main.getNumExams(); i++) {
             int ex = pStudent.getExam(i);
             String exstr = Integer.toString(ex);
             mExamText[i].setText(exstr);
@@ -365,13 +365,13 @@ public class View extends JFrame implements ActionListener {
      *
      * DO NOT HARDCODE THE NUMBER OF HOMEWORKS AND EXAMS
      */
-    private void saveStudent(P03.Student pStudent) {
-        for(int i=0; i<P03.Main.getNumHomeworks(); i++) {
+    private void saveStudent(proj3.Student pStudent) {
+        for(int i = 0; i< proj3.Main.getNumHomeworks(); i++) {
             String hwstr = mHomeworkText[i].getText();
             int hw = Integer.parseInt(hwstr);
             pStudent.setHomework(i, hw);
         }
-        for(int i=0; i<P03.Main.getNumExams(); i++) {
+        for(int i = 0; i< proj3.Main.getNumExams(); i++) {
             String exstr = mExamText[i].getText();
             int hw = Integer.parseInt(exstr);
             pStudent.setExam(i, hw);

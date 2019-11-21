@@ -5,9 +5,8 @@
 //Project Number: 3
 // AUTHOR: Christopher Barcelon, clbarcel, clbarcel@asu.edu
 //**************************************************************************************************
-package P03;
+package proj3;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -19,7 +18,7 @@ public class Roster {
     /**
      * Declare mStudentList as ArrayList<P03.Student>
      */
-    private ArrayList<P03.Student> mStudentList;
+    private ArrayList<proj3.Student> mStudentList;
 
     /**
      * P03.Roster()
@@ -48,7 +47,7 @@ public class Roster {
      *     add (will append) pStudent to mStudentList
      * end method
      */
-    public void addStudent(P03.Student pStudent) {
+    public void addStudent(proj3.Student pStudent) {
         mStudentList.add(pStudent);
 
     }

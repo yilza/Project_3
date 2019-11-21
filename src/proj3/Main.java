@@ -5,7 +5,7 @@
 //Project Number: 3
 // AUTHOR: Christopher Barcelon, clbarcel, clbarcel@asu.edu
 //**************************************************************************************************
-package P03;
+package proj3;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
@@ -39,7 +39,7 @@ public class Main {
      * This is where execution starts. Instantiate a P03.Main object and then call run().
      */
     public static void main(String[] pArgs) {
-        new P03.Main().run();
+        new proj3.Main().run();
     }
 
     /**
@@ -66,7 +66,7 @@ public class Main {
      */
     public void exit() {
         try {
-            P03.GradebookWriter gbWriter = new P03.GradebookWriter("gradebook.dat");
+            proj3.GradebookWriter gbWriter = new proj3.GradebookWriter("gradebook.dat");
             gbWriter.writeGradebook(getRoster());
             System.exit(0);
         }
@@ -132,7 +132,7 @@ public class Main {
      */
     private void run() {
         JFrame.setDefaultLookAndFeelDecorated(true);
-        setView(new P03.View(this));
+        setView(new proj3.View(this));
         try {
             GradebookReader gbReader = new GradebookReader("gradebook.dat");
             setRoster(gbReader.readGradebook());
@@ -157,7 +157,7 @@ public class Main {
      *     call getRoster().getStudent(pLastName) and return what getStudent() returns
      * end search
      */
-    public P03.Student search(String pLastName) {
+    public proj3.Student search(String pLastName) {
         return getRoster().getStudent(pLastName);
     }
 
